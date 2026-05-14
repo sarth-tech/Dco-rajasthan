@@ -1,5 +1,6 @@
 /* ============================================================
    राजस्थान जनगणना - Components CSS
+   Census of India — Government of Rajasthan
 ============================================================ */
 
 /* ============================================================
@@ -14,7 +15,7 @@
 .dsb-item {
     background: var(--bg-white);
     border: 1px solid var(--border);
-    border-top: 4px solid var(--gov-orange);
+    border-top: 4px solid var(--gov-saffron);
     border-radius: var(--radius);
     padding: 14px 18px;
     text-align: center;
@@ -23,7 +24,7 @@
 .dsb-val {
     display: block;
     font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     font-weight: 700;
     color: var(--gov-blue-dark);
 }
@@ -32,9 +33,11 @@
     font-size: 0.78rem;
     color: var(--text-light);
     margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 
-/* Table Controls */
+/* ---- Table Controls ---- */
 .table-controls {
     display: flex;
     justify-content: space-between;
@@ -50,12 +53,16 @@
     font-size: 0.88rem;
     width: 300px;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: var(--bg-white);
 }
-.search-box:focus { border-color: var(--gov-blue); box-shadow: 0 0 0 3px rgba(0,53,128,0.1); }
+.search-box:focus {
+    border-color: var(--gov-blue);
+    box-shadow: 0 0 0 3px rgba(0,53,128,0.12);
+}
 .table-count { color: var(--text-light); font-size: 0.82rem; }
 
-/* Data Table */
+/* ---- Data Table ---- */
 .table-wrapper {
     overflow-x: auto;
     background: var(--bg-white);
@@ -69,7 +76,7 @@
     font-size: 0.86rem;
 }
 .data-table thead tr {
-    background: linear-gradient(90deg, var(--gov-blue) 0%, var(--gov-navy) 100%);
+    background: linear-gradient(90deg, var(--gov-blue-dark) 0%, var(--gov-blue-mid) 100%);
 }
 .data-table thead th {
     color: #fff;
@@ -78,34 +85,44 @@
     font-size: 0.82rem;
     font-weight: 600;
     white-space: nowrap;
-    border-right: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.12);
+    letter-spacing: 0.3px;
+}
+.data-table thead th:first-child {
+    border-left: 4px solid var(--gov-saffron);
 }
 .data-table thead th:last-child { border-right: none; }
 .data-table thead th.sortable { cursor: pointer; }
-.data-table thead th.sortable:hover { background: rgba(255,255,255,0.1); }
+.data-table thead th.sortable:hover { background: rgba(255,255,255,0.10); }
+
 .data-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
 .data-table tbody tr:last-child { border-bottom: none; }
-.data-table tbody tr:hover { background: #f0f5ff; }
-.data-table tbody tr:nth-child(even) { background: #f8fafd; }
-.data-table tbody tr:nth-child(even):hover { background: #f0f5ff; }
+.data-table tbody tr:hover { background: #EDF2FB; }
+.data-table tbody tr:nth-child(even) { background: #F5F8FD; }
+.data-table tbody tr:nth-child(even):hover { background: #EDF2FB; }
 .data-table td { padding: 11px 14px; vertical-align: middle; }
 .data-table td.center { text-align: center; color: var(--text-light); font-size: 0.8rem; }
 .data-table td.number { text-align: right; font-variant-numeric: tabular-nums; }
 
-.district-name strong { display: block; color: var(--gov-blue-dark); font-size: 0.9rem; }
+.district-name strong { display: block; color: var(--gov-blue-dark); font-size: 0.9rem; font-weight: 600; }
 .district-name small  { display: block; color: var(--text-light); font-size: 0.75rem; }
 
 .literacy-bar-cell { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-.mini-bar { width: 60px; height: 5px; background: #e0e8f0; border-radius: 3px; overflow: hidden; }
-.mini-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gov-orange), var(--gov-saffron)); border-radius: 3px; }
+.mini-bar { width: 60px; height: 5px; background: #d4ddf0; border-radius: 3px; overflow: hidden; }
+.mini-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gov-orange), var(--gov-saffron));
+    border-radius: 3px;
+}
 
 .table-note {
     margin-top: 12px;
     font-size: 0.78rem;
     color: var(--text-light);
     padding: 10px 14px;
-    background: #f8fafd;
+    background: #F3F6FC;
     border: 1px solid var(--border);
+    border-left: 3px solid var(--gov-blue);
     border-radius: var(--radius);
 }
 
@@ -114,55 +131,63 @@
 ============================================================ */
 .filter-tabs {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
 .tab-btn {
-    padding: 8px 20px;
+    padding: 7px 18px;
     border: 2px solid var(--border);
     background: var(--bg-white);
-    border-radius: 30px;
+    border-radius: 4px;
     cursor: pointer;
     font-family: var(--font-body);
     font-size: 0.86rem;
     color: var(--text-mid);
     transition: all 0.2s;
+    font-weight: 500;
 }
 .tab-btn:hover, .tab-btn.active {
-    background: var(--gov-blue);
-    border-color: var(--gov-blue);
+    background: var(--gov-blue-dark);
+    border-color: var(--gov-blue-dark);
     color: #fff;
 }
 
-.notices-full-list { display: flex; flex-direction: column; gap: 14px; }
+.notices-full-list { display: flex; flex-direction: column; gap: 12px; }
+
 .notice-card {
     background: var(--bg-white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    border-left: 4px solid var(--gov-blue);
     padding: 16px 20px;
     display: flex;
     align-items: flex-start;
     gap: 20px;
     box-shadow: var(--shadow);
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s, border-left-color 0.2s;
 }
-.notice-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
-.notice-card-left { flex-shrink: 0; text-align: center; min-width: 90px; }
-.notice-card-date { font-size: 0.8rem; color: var(--text-light); margin-bottom: 8px; }
+.notice-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+    border-left-color: var(--gov-saffron);
+}
+.notice-card-left    { flex-shrink: 0; text-align: center; min-width: 90px; }
+.notice-card-date    { font-size: 0.8rem; color: var(--text-light); margin-bottom: 8px; }
 .notice-card-badge {
     font-size: 0.72rem;
     padding: 4px 10px;
-    border-radius: 4px;
+    border-radius: 3px;
     font-weight: 600;
     white-space: nowrap;
+    border: 1px solid transparent;
 }
-.notice-card-body { flex: 1; }
-.notice-card-title { font-size: 1rem; font-weight: 600; margin: 6px 0 6px; }
-.notice-card-title a { color: var(--gov-blue-dark); }
+.notice-card-body        { flex: 1; }
+.notice-card-title       { font-size: 1rem; font-weight: 600; margin: 6px 0 6px; }
+.notice-card-title a     { color: var(--gov-blue-dark); }
 .notice-card-title a:hover { color: var(--gov-orange); }
-.notice-card-subtitle { font-size: 0.8rem; color: var(--text-light); font-style: italic; }
-.notice-card-actions { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; }
+.notice-card-subtitle    { font-size: 0.8rem; color: var(--text-light); font-style: italic; }
+.notice-card-actions     { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; }
 .notice-card-actions .btn-outline {
     color: var(--gov-blue);
     border-color: var(--gov-blue);
@@ -181,16 +206,22 @@
     gap: 24px;
     align-items: start;
 }
-.about-text p { margin-bottom: 14px; font-size: 0.93rem; line-height: 1.8; }
-.about-text h3 { margin: 20px 0 10px; color: var(--gov-blue-dark); font-family: var(--font-display); }
-.about-list { list-style: none; }
+.about-text p    { margin-bottom: 14px; font-size: 0.93rem; line-height: 1.85; }
+.about-text h3   {
+    margin: 20px 0 10px;
+    color: var(--gov-blue-dark);
+    font-family: var(--font-display);
+    padding-left: 12px;
+    border-left: 3px solid var(--gov-saffron);
+}
+.about-list      { list-style: none; }
 .about-list li {
-    padding: 8px 0 8px 20px;
+    padding: 8px 0 8px 22px;
     position: relative;
     border-bottom: 1px solid var(--border);
     font-size: 0.9rem;
 }
-.about-list li::before { content: '▸'; position: absolute; left: 0; color: var(--gov-orange); }
+.about-list li::before  { content: '▸'; position: absolute; left: 0; color: var(--gov-orange); }
 .director-avatar {
     font-size: 3rem;
     width: 80px; height: 80px;
@@ -198,11 +229,11 @@
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 12px;
-    border: 2px solid var(--border);
+    border: 3px solid var(--gov-blue);
 }
 .text-center { text-align: center; }
 .about-sidebar .panel-body h4 { margin-bottom: 6px; color: var(--gov-blue-dark); }
-.about-sidebar .panel-body p { font-size: 0.83rem; color: var(--text-light); }
+.about-sidebar .panel-body p  { font-size: 0.83rem; color: var(--text-light); }
 
 /* ============================================================
    CONTACT PAGE
@@ -220,13 +251,18 @@
     border-bottom: 1px solid var(--border);
 }
 .contact-detail:last-child { border-bottom: none; }
-.contact-icon { font-size: 1.4rem; flex-shrink: 0; width: 28px; text-align: center; }
+.contact-icon          { font-size: 1.4rem; flex-shrink: 0; width: 28px; text-align: center; }
 .contact-detail strong { font-size: 0.88rem; color: var(--gov-blue-dark); display: block; margin-bottom: 2px; }
-.contact-detail p { font-size: 0.85rem; color: var(--text-mid); }
+.contact-detail p      { font-size: 0.85rem; color: var(--text-mid); }
 
-.contact-form { display: flex; flex-direction: column; gap: 14px; }
-.form-group { display: flex; flex-direction: column; gap: 5px; }
-.form-group label { font-size: 0.85rem; color: var(--text-mid); font-weight: 500; }
+.contact-form  { display: flex; flex-direction: column; gap: 14px; }
+.form-group    { display: flex; flex-direction: column; gap: 5px; }
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
 .form-control {
     padding: 9px 14px;
     border: 1px solid var(--border);
@@ -234,23 +270,27 @@
     font-family: var(--font-body);
     font-size: 0.88rem;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
+    background: var(--bg-white);
 }
-.form-control:focus { border-color: var(--gov-blue); box-shadow: 0 0 0 3px rgba(0,53,128,0.1); }
-select.form-control { cursor: pointer; }
-textarea.form-control { resize: vertical; }
+.form-control:focus {
+    border-color: var(--gov-blue);
+    box-shadow: 0 0 0 3px rgba(0,53,128,0.10);
+}
+select.form-control    { cursor: pointer; }
+textarea.form-control  { resize: vertical; }
 
 /* ============================================================
    RESPONSIVE COMPONENTS
 ============================================================ */
 @media (max-width: 768px) {
     .district-summary-bar { grid-template-columns: repeat(2, 1fr); }
-    .notice-card { flex-direction: column; gap: 12px; }
-    .notice-card-actions { flex-direction: row; }
+    .notice-card          { flex-direction: column; gap: 12px; }
+    .notice-card-actions  { flex-direction: row; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; }
-    .table-controls { flex-direction: column; align-items: flex-start; }
-    .search-box { width: 100%; }
+    .table-controls       { flex-direction: column; align-items: flex-start; }
+    .search-box           { width: 100%; }
 }
 
 @media (max-width: 480px) {

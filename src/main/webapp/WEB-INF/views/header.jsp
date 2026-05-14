@@ -44,11 +44,18 @@
 <!-- ============ MAIN HEADER ============ -->
 <header class="main-header">
     <div class="container header-inner">
+
         <!-- Emblem -->
         <div class="header-emblem">
             <div class="emblem-circle">
-                <span class="emblem-lion">🦁</span>
-                <div class="emblem-text-circle">सत्यमेव जयते</div>
+
+               
+                <img src="/media/satyamev jayate.jpg" alt="Government Emblem" class="emblem-img">
+
+                <div class="emblem-text-circle">
+                    सत्यमेव जयते
+                </div>
+
             </div>
         </div>
         
@@ -66,7 +73,7 @@
                     <span class="raj-text-big">RJ</span>
                     <span class="raj-text-sm">RAJASTHAN</span>
                 </div>
-                <div class="raj-logo-title">राजस्थान सरकार</div>
+                <div class="raj-logo-title">भारत सरकार</div>
             </div>
         </div>
     </div>
@@ -88,7 +95,7 @@
                 </ul>
             </li>
             <li class="has-dropdown">
-                <a href="#">जनगणना 2011 ▾</a>
+                <a href="#">डेटा ▾</a>
                 <ul class="dropdown">
                     <li><a href="${pageContext.request.contextPath}/districts">जिला डेटा</a></li>
                     <li><a href="#">जनसंख्या तालिकाएँ</a></li>
@@ -98,6 +105,7 @@
                 </ul>
             </li>
             <li><a href="${pageContext.request.contextPath}/notices" class="${activePage == 'notices' ? 'active' : ''}">📋 सूचनाएँ</a></li>
+            <li><a href="${pageContext.request.contextPath}/media" class="${activePage == 'media' ? 'active' : ''}">📸 मीडिया</a></li>
             <li class="has-dropdown">
                 <a href="#">प्रकाशन ▾</a>
                 <ul class="dropdown">

@@ -1,35 +1,51 @@
+
 /* ============================================================
    राजस्थान जनगणना - Main Stylesheet
-   Inspired by censusindia.gov.in design language
-   Government of India / Rajasthan Census
+   Census of India — Government of Rajasthan
+   Inspired by censusindia.gov.in & rajasthan.gov.in design language
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap');
 
 /* ---- CSS Variables ---- */
 :root {
-    --gov-blue:       #003580;
-    --gov-blue-dark:  #00235a;
-    --gov-orange:     #FF6B00;
-    --gov-orange-lt:  #FF8C42;
-    --gov-saffron:    #FF9933;
-    --gov-green:      #138808;
-    --gov-navy:       #1a3a6b;
-    --gov-gold:       #C8952A;
-    --nav-bg:         #0a2d6e;
-    --nav-hover:      #FF6B00;
-    --text-dark:      #1a1a1a;
-    --text-mid:       #444;
-    --text-light:     #666;
-    --border:         #dce3ed;
-    --bg-light:       #f4f6fb;
-    --bg-white:       #ffffff;
-    --shadow:         0 2px 12px rgba(0,35,90,0.10);
-    --shadow-lg:      0 6px 24px rgba(0,35,90,0.16);
-    --radius:         6px;
-    --transition:     0.2s ease;
-    --font-body:      'Noto Sans Devanagari', 'Noto Sans', sans-serif;
-    --font-display:   'Tiro Devanagari Hindi', 'Noto Sans Devanagari', serif;
+    /* Primary Government Theme — Census of India */
+    --gov-blue:        #124b9b;   /* Deep official government blue */
+    --gov-blue-dark:   #144196;   /* Darker navy for headings & accents */
+    --gov-blue-mid:    #082244;   /* Mid blue for nav/panels */
+    --gov-orange:      #FF6600;   /* Saffron-orange (Indian tricolor) */
+    --gov-orange-lt:   #FFE8D6;   /* Light saffron tint */
+    --gov-saffron:     #FF9933;   /* Classic Indian saffron */
+    --gov-green:       #138808;   /* Indian tricolor green */
+    --gov-navy:        #b9920f;   /* Deepest navy */
+    --gov-gold:        #C8A000;   /* Gold for emblem accents */
+
+    /* Navigation */
+    --nav-bg:          #002060;
+    --nav-hover:       #082e55;
+
+    /* Text */
+    --text-dark:       #111827;
+    --text-mid:        #374151;
+    --text-light:      #6B7280;
+
+    /* Borders */
+    --border:          #D1D9E6;
+
+    /* Backgrounds */
+    --bg-light:        #F3F6FC;
+    --bg-white:        #FFFFFF;
+
+    /* Effects */
+    --shadow:          0 2px 8px rgba(0,32,96,0.10);
+    --shadow-lg:       0 8px 24px rgba(0,32,96,0.16);
+
+    --radius:          6px;
+    --transition:      all .25s ease;
+
+    /* Typography */
+    --font-body:       'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+    --font-display:    'Tiro Devanagari Hindi', 'Noto Sans Devanagari', serif;
 }
 
 /* ---- Reset & Base ---- */
@@ -42,13 +58,13 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--bg-light);
+    background: #EFF3FA;
     color: var(--text-dark);
     line-height: 1.7;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1220px;
     margin: 0 auto;
     padding: 0 16px;
 }
@@ -63,7 +79,7 @@ img { max-width: 100%; }
     position: absolute;
     left: -9999px;
     top: 0;
-    background: var(--gov-orange);
+    background: var(--gov-blue);
     color: #fff;
     padding: 8px 16px;
     z-index: 9999;
@@ -71,14 +87,14 @@ img { max-width: 100%; }
 .skip-nav:focus { left: 0; }
 
 /* ============================================================
-   UTILITY BAR
+   UTILITY BAR  — GOI top strip
 ============================================================ */
 .utility-bar {
-    background: var(--gov-blue-dark);
-    color: #ccd8f0;
+    background: #001a4d;
+    color: #aec6f0;
     font-size: 0.78rem;
     padding: 5px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 2px solid var(--gov-saffron);
 }
 .utility-bar .container {
     display: flex;
@@ -87,15 +103,17 @@ img { max-width: 100%; }
     flex-wrap: wrap;
     gap: 6px;
 }
-.utility-left { display: flex; align-items: center; gap: 8px; }
+.utility-left  { display: flex; align-items: center; gap: 8px; }
 .utility-right { display: flex; align-items: center; gap: 6px; }
-.utility-bar .separator { color: rgba(255,255,255,0.3); }
+.utility-bar .separator { color: rgba(255,255,255,0.25); }
+
 .lang-btn {
-    color: #ccd8f0;
+    color: #aec6f0;
     padding: 2px 8px;
     border-radius: 3px;
     font-size: 0.78rem;
     border: 1px solid transparent;
+    cursor: pointer;
 }
 .lang-btn:hover, .lang-btn.active {
     background: rgba(255,255,255,0.15);
@@ -105,7 +123,7 @@ img { max-width: 100%; }
 .text-resize, .contrast-btn {
     background: none;
     border: 1px solid rgba(255,255,255,0.25);
-    color: #ccd8f0;
+    color: #aec6f0;
     padding: 2px 7px;
     cursor: pointer;
     border-radius: 3px;
@@ -118,14 +136,23 @@ img { max-width: 100%; }
 }
 
 /* ============================================================
-   MAIN HEADER
+   MAIN HEADER — official emblem + title strip
 ============================================================ */
 .main-header {
-    background: linear-gradient(135deg, var(--gov-blue-dark) 0%, var(--gov-navy) 60%, #e6eaf0 100%);
-    padding: 12px 0;
-    border-bottom: 3px solid var(--gov-saffron);
+    background: linear-gradient(180deg, #FAFCFF 0%, #EEF3FB 100%);
+    padding: 14px 0;
+    border-bottom: 4px solid var(--gov-blue-dark);
     position: relative;
     overflow: hidden;
+}
+
+/* Tricolor accent line under header */
+.main-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%);
 }
 
 .main-header::before {
@@ -133,7 +160,7 @@ img { max-width: 100%; }
     position: absolute;
     top: 0; right: -60px;
     width: 400px; height: 100%;
-    background: radial-gradient(ellipse, rgba(255,153,51,0.12), transparent 70%);
+    background: radial-gradient(ellipse, rgba(0,32,128,0.05), transparent 70%);
     pointer-events: none;
 }
 
@@ -144,56 +171,53 @@ img { max-width: 100%; }
 }
 
 /* Emblem */
-.header-emblem { flex-shrink: 0; }
-.emblem-circle {
-    width: 72px; height: 72px;
-    border: 3px solid var(--gov-gold);
-    border-radius: 50%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    background: rgba(200,149,42,0.12);
+.emblem-img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+    border-radius:50%;
 }
-.emblem-lion { font-size: 28px; line-height: 1; }
-.emblem-text-circle { font-size: 7px; color: var(--gov-gold); letter-spacing: 1px; margin-top: 2px; }
 
 /* Title */
 .header-title { flex: 1; }
 .header-title-hi {
     font-family: var(--font-display);
-    font-size: 1.55rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--gov-blue-dark);
     line-height: 1.2;
     letter-spacing: 0.3px;
 }
 .header-title-en {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.75);
+    font-size: 0.92rem;
+    color: var(--gov-blue);
     margin-top: 2px;
+    font-weight: 600;
 }
 .header-subtitle {
-    font-size: 0.72rem;
-    color: rgba(255,200,100,0.8);
+    font-size: 0.73rem;
+    color: var(--gov-blue-mid);
     margin-top: 3px;
 }
 
-/* Right Logo */
+/* Right Logo Badge */
 .header-right { flex-shrink: 0; text-align: center; }
 .raj-logo-badge {
-    background: linear-gradient(135deg, var(--gov-saffron), #c76f00);
+    background: linear-gradient(135deg, #002060, #003580);
     border-radius: var(--radius);
-    padding: 8px 14px;
+    padding: 10px 16px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(255,153,51,0.4);
+    box-shadow: 0 2px 10px rgba(0,32,96,0.25);
+    border: 2px solid var(--gov-saffron);
 }
-.raj-text-big { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1; letter-spacing: 2px; }
-.raj-text-sm { font-size: 0.55rem; color: rgba(255,255,255,0.85); letter-spacing: 2px; }
-.raj-logo-title { font-size: 0.7rem; color: rgba(255,200,100,0.8); margin-top: 4px; }
+.raj-text-big  { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1; letter-spacing: 2px; }
+.raj-text-sm   { font-size: 0.55rem; color: var(--gov-saffron); letter-spacing: 2px; }
+.raj-logo-title{ font-size: 0.68rem; color: #aec6f0; margin-top: 4px; }
 
 /* ============================================================
-   MAIN NAVIGATION
+   MAIN NAVIGATION — deep blue official nav
 ============================================================ */
 .main-nav {
     background: var(--nav-bg);
@@ -201,6 +225,7 @@ img { max-width: 100%; }
     top: 0;
     z-index: 100;
     box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+    border-bottom: 3px solid var(--gov-saffron);
 }
 
 .main-nav .container { position: relative; }
@@ -215,8 +240,8 @@ img { max-width: 100%; }
 
 .nav-list > li > a {
     display: block;
-    color: rgba(255,255,255,0.88);
-    padding: 13px 16px;
+    color: #dce8ff;
+    padding: 14px 18px;
     font-size: 0.88rem;
     font-weight: 500;
     transition: background var(--transition), color var(--transition);
@@ -226,7 +251,7 @@ img { max-width: 100%; }
 
 .nav-list > li > a:hover,
 .nav-list > li > a.active {
-    background: rgba(255,255,255,0.08);
+    background: var(--nav-hover);
     color: #fff;
     border-bottom-color: var(--gov-saffron);
 }
@@ -237,10 +262,10 @@ img { max-width: 100%; }
     position: absolute;
     top: 100%;
     left: 0;
-    background: #fff;
-    min-width: 240px;
-    box-shadow: var(--shadow-lg);
-    border-top: 3px solid var(--gov-orange);
+    background: #ffffff;
+    min-width: 250px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    border-top: 3px solid var(--gov-saffron);
     list-style: none;
     z-index: 200;
     border-radius: 0 0 var(--radius) var(--radius);
@@ -251,10 +276,10 @@ img { max-width: 100%; }
     color: var(--text-dark);
     font-size: 0.86rem;
     border-bottom: 1px solid var(--border);
-    transition: background var(--transition);
+    transition: background var(--transition), color var(--transition);
 }
 .dropdown li:last-child a { border-bottom: none; }
-.dropdown li a:hover { background: var(--bg-light); color: var(--gov-orange); padding-left: 24px; }
+.dropdown li a:hover { background: var(--bg-light); color: var(--gov-blue-dark); padding-left: 24px; }
 .has-dropdown:hover .dropdown { display: block; }
 
 .mobile-menu-toggle {
@@ -272,8 +297,9 @@ img { max-width: 100%; }
    BREADCRUMB
 ============================================================ */
 .breadcrumb-bar {
-    background: #edf2fb;
+    background: #E8EEF8;
     border-bottom: 1px solid var(--border);
+    border-top: 1px solid #c8d4e8;
     padding: 6px 0;
     font-size: 0.78rem;
 }
@@ -284,31 +310,35 @@ img { max-width: 100%; }
 }
 .breadcrumb { list-style: none; display: flex; align-items: center; gap: 6px; }
 .breadcrumb a { color: var(--gov-blue); }
+.breadcrumb a:hover { color: var(--gov-orange); }
 .breadcrumb .separator { color: var(--text-light); }
-.breadcrumb .current { color: var(--text-mid); }
+.breadcrumb .current { color: var(--text-mid); font-weight: 500; }
 .last-updated { color: var(--text-light); font-size: 0.74rem; }
 
 /* ============================================================
    NEWS TICKER
 ============================================================ */
 .news-ticker {
-    background: var(--gov-blue);
+    background: var(--gov-blue-dark);
     color: #fff;
     display: flex;
     align-items: center;
     overflow: hidden;
     height: 36px;
+    border-bottom: 2px solid var(--gov-saffron);
 }
 .ticker-label {
-    background: var(--gov-orange);
-    padding: 0 16px;
+    background: var(--gov-saffron);
+    color: #fff;
+    padding: 0 18px;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
     height: 100%;
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    letter-spacing: 0.5px;
 }
 .ticker-content {
     flex: 1;
@@ -331,7 +361,7 @@ img { max-width: 100%; }
    HERO SECTION
 ============================================================ */
 .hero-section {
-    background: linear-gradient(135deg, var(--gov-blue-dark) 0%, var(--gov-navy) 50%, #1a4a8a 100%);
+    background: linear-gradient(135deg, #002060 0%, #003580 50%, #001a4d 100%);
     position: relative;
     overflow: hidden;
     min-height: 340px;
@@ -341,17 +371,27 @@ img { max-width: 100%; }
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 20% 50%, rgba(255,153,51,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(19,136,8,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 50%, rgba(255,153,51,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(19,136,8,0.04) 0%, transparent 50%),
         url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(255,255,255,0.02)'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/svg%3E");
     pointer-events: none;
+}
+
+/* Vertical tricolor left-edge accent */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px; height: 100%;
+    background: linear-gradient(180deg, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%);
+    z-index: 2;
 }
 
 .hero-inner {
     display: flex;
     align-items: center;
     gap: 40px;
-    padding: 50px 16px;
+    padding: 50px 16px 50px 26px;
     position: relative;
     z-index: 1;
 }
@@ -359,14 +399,15 @@ img { max-width: 100%; }
 .hero-content { flex: 1; }
 .hero-badge {
     display: inline-block;
-    background: rgba(255,153,51,0.2);
+    background: rgba(255,153,51,0.15);
     border: 1px solid rgba(255,153,51,0.5);
     color: var(--gov-saffron);
     padding: 4px 14px;
-    border-radius: 20px;
+    border-radius: 4px;
     font-size: 0.78rem;
     letter-spacing: 1px;
     margin-bottom: 14px;
+    font-weight: 600;
 }
 .hero-title {
     font-family: var(--font-display);
@@ -376,8 +417,8 @@ img { max-width: 100%; }
     margin-bottom: 12px;
 }
 .hero-title span { color: var(--gov-saffron); }
-.hero-sub { color: rgba(255,255,255,0.85); font-size: 1rem; margin-bottom: 4px; }
-.hero-sub-en { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-bottom: 24px; }
+.hero-sub    { color: rgba(255,255,255,0.90); font-size: 1rem; margin-bottom: 4px; }
+.hero-sub-en { color: rgba(255,255,255,0.60); font-size: 0.85rem; margin-bottom: 24px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 .hero-map-area {
@@ -386,12 +427,12 @@ img { max-width: 100%; }
 }
 .raj-map-svg {
     width: 100%;
-    filter: drop-shadow(0 4px 20px rgba(255,153,51,0.25));
+    filter: drop-shadow(0 4px 20px rgba(255,153,51,0.30));
     animation: mapFloat 4s ease-in-out infinite;
 }
 @keyframes mapFloat {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50%       { transform: translateY(-8px); }
 }
 
 /* ============================================================
@@ -410,15 +451,16 @@ img { max-width: 100%; }
     border: 2px solid transparent;
     transition: all var(--transition);
     text-decoration: none;
+    letter-spacing: 0.2px;
 }
 .btn-primary {
-    background: var(--gov-orange);
+    background: var(--gov-saffron);
     color: #fff;
-    border-color: var(--gov-orange);
+    border-color: var(--gov-saffron);
 }
 .btn-primary:hover {
-    background: #e05e00;
-    border-color: #e05e00;
+    background: #e07000;
+    border-color: #e07000;
     color: #fff;
     transform: translateY(-1px);
     box-shadow: 0 4px 14px rgba(255,107,0,0.4);
@@ -429,19 +471,21 @@ img { max-width: 100%; }
     border-color: rgba(255,255,255,0.5);
 }
 .btn-outline:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.12);
     border-color: #fff;
     color: #fff;
 }
 .btn-sm { padding: 6px 14px; font-size: 0.8rem; }
-.mt-1 { margin-top: 12px; }
+.mt-1   { margin-top: 12px; }
 
 /* ============================================================
    STATS SECTION
 ============================================================ */
 .stats-section {
-    background: linear-gradient(90deg, var(--gov-blue) 0%, var(--gov-navy) 100%);
+    background: linear-gradient(90deg, #002060 0%, #003580 60%, #001a4d 100%);
     padding: 28px 0;
+    border-top: 3px solid var(--gov-saffron);
+    border-bottom: 3px solid var(--gov-green);
 }
 .stats-grid {
     display: grid;
@@ -465,7 +509,7 @@ img { max-width: 100%; }
 }
 .stat-label {
     font-size: 0.72rem;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.75);
     margin-top: 4px;
     line-height: 1.4;
 }
@@ -483,7 +527,7 @@ img { max-width: 100%; }
 }
 .page-heading h1 {
     font-family: var(--font-display);
-    font-size: 1.7rem;
+    font-size: 1.75rem;
     color: var(--gov-blue-dark);
     margin-bottom: 6px;
 }
@@ -509,11 +553,12 @@ img { max-width: 100%; }
     overflow: hidden;
 }
 .panel-header {
-    background: linear-gradient(90deg, var(--gov-blue) 0%, var(--gov-navy) 100%);
+    background: linear-gradient(90deg, var(--gov-blue-dark) 0%, var(--gov-blue-mid) 100%);
     padding: 12px 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-left: 4px solid var(--gov-saffron);
 }
 .panel-header h2, .panel-header h3 {
     color: #fff;
@@ -521,11 +566,8 @@ img { max-width: 100%; }
     font-family: var(--font-display);
     font-weight: 600;
 }
-.panel-header .view-all {
-    color: rgba(255,200,100,0.9);
-    font-size: 0.78rem;
-}
-.panel-header .view-all:hover { color: var(--gov-saffron); }
+.panel-header .view-all { color: var(--gov-saffron); font-size: 0.78rem; }
+.panel-header .view-all:hover { color: #ffd080; }
 .panel-body { padding: 16px 18px; }
 
 /* ============================================================
@@ -555,12 +597,12 @@ img { max-width: 100%; }
     font-weight: 600;
     white-space: nowrap;
 }
-.notice-news    { background: #e8f5e9; color: #2e7d32; }
-.notice-notice  { background: #e3f2fd; color: #1565c0; }
-.notice-circular{ background: #fff3e0; color: #e65100; }
+.notice-news     { background: #e6f4ea; color: #1a6b25; border: 1px solid #b2dfb8; }
+.notice-notice   { background: #e8f0fc; color: #1a3f8a; border: 1px solid #b3c6f0; }
+.notice-circular { background: #fff4e5; color: #a03000; border: 1px solid #f9c97a; }
 
 .new-badge {
-    background: #f44336;
+    background: #c00;
     color: #fff;
     font-size: 0.6rem;
     padding: 1px 5px;
@@ -593,12 +635,13 @@ img { max-width: 100%; }
     margin-left: auto;
     font-size: 0.72rem;
     padding: 3px 10px;
-    border-radius: 20px;
+    border-radius: 3px;
     white-space: nowrap;
     font-weight: 600;
+    border: 1px solid transparent;
 }
-.phase-status.active   { background: #e8f5e9; color: #2e7d32; }
-.phase-status.upcoming { background: #fff3e0; color: #e65100; }
+.phase-status.active   { background: #e6f4ea; color: #1a6b25; border-color: #a5d6a7; }
+.phase-status.upcoming { background: #fff4e5; color: #a03000; border-color: #f9c97a; }
 
 /* ============================================================
    QUICK LINKS
@@ -608,12 +651,20 @@ img { max-width: 100%; }
 .quicklinks li:last-child { border-bottom: none; }
 .quicklinks li a {
     display: block;
-    padding: 9px 4px;
+    padding: 9px 4px 9px 14px;
     font-size: 0.85rem;
     color: var(--gov-blue);
     transition: padding var(--transition), color var(--transition);
+    position: relative;
 }
-.quicklinks li a:hover { color: var(--gov-orange); padding-left: 10px; }
+.quicklinks li a::before {
+    content: '▸';
+    position: absolute;
+    left: 2px;
+    color: var(--gov-orange);
+    font-size: 0.75rem;
+}
+.quicklinks li a:hover { color: var(--gov-orange); padding-left: 20px; }
 
 /* ============================================================
    GALLERY
@@ -632,6 +683,7 @@ img { max-width: 100%; }
     font-size: 1.8rem;
     cursor: pointer;
     transition: transform var(--transition);
+    border: 1px solid var(--border);
 }
 .gallery-thumb:hover { transform: scale(1.04); }
 
@@ -647,15 +699,20 @@ img { max-width: 100%; }
     font-size: 0.83rem;
     color: var(--gov-blue);
     border-bottom: 1px solid var(--border);
+    transition: color var(--transition), padding var(--transition);
 }
 .download-list li:last-child .download-item { border-bottom: none; }
-.download-item:hover { color: var(--gov-orange); }
-.download-item span { font-size: 1.1rem; }
+.download-item:hover { color: var(--gov-orange); padding-left: 6px; }
+.download-item span  { font-size: 1.1rem; }
 
 /* ============================================================
    FOOTER
 ============================================================ */
-.main-footer { background: var(--gov-blue-dark); color: #ccd8f0; }
+.main-footer {
+    background: #001a4d;
+    color: #aec6f0;
+    border-top: 4px solid var(--gov-saffron);
+}
 .footer-top { padding: 40px 0 32px; }
 .footer-grid {
     display: grid;
@@ -667,22 +724,24 @@ img { max-width: 100%; }
     font-size: 0.92rem;
     margin-bottom: 14px;
     padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-bottom: 1px solid rgba(255,153,51,0.25);
     font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 .footer-col p { font-size: 0.83rem; line-height: 1.7; margin-bottom: 6px; }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 6px; }
 .footer-col ul li a {
-    color: #ccd8f0;
+    color: #aec6f0;
     font-size: 0.83rem;
     transition: color var(--transition), padding var(--transition);
 }
 .footer-col ul li a:hover { color: var(--gov-saffron); padding-left: 6px; }
 
 .footer-bottom {
-    background: var(--gov-blue-dark);
-    border-top: 1px solid rgba(255,255,255,0.1);
+    background: #001040;
+    border-top: 1px solid rgba(255,255,255,0.08);
     padding: 14px 0 0;
 }
 .footer-bottom-inner {
@@ -693,10 +752,10 @@ img { max-width: 100%; }
     gap: 8px;
     font-size: 0.78rem;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .footer-bottom-right a {
-    color: #ccd8f0;
+    color: #aec6f0;
     margin: 0 4px;
     font-size: 0.75rem;
 }
@@ -704,7 +763,7 @@ img { max-width: 100%; }
 .footer-copyright {
     text-align: center;
     font-size: 0.75rem;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.38);
     padding: 10px 0;
 }
 
@@ -712,36 +771,36 @@ img { max-width: 100%; }
    RESPONSIVE
 ============================================================ */
 @media (max-width: 1024px) {
-    .stats-grid { grid-template-columns: repeat(3, 1fr); }
-    .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    .two-col-layout { grid-template-columns: 1fr; }
+    .stats-grid      { grid-template-columns: repeat(3, 1fr); }
+    .footer-grid     { grid-template-columns: repeat(2, 1fr); }
+    .two-col-layout  { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-    .header-inner { flex-wrap: wrap; gap: 12px; }
+    .header-inner    { flex-wrap: wrap; gap: 12px; }
     .header-title-hi { font-size: 1.2rem; }
-    .hero-inner { flex-direction: column; padding: 30px 16px; }
-    .hero-title { font-size: 1.8rem; }
-    .hero-map-area { width: 180px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .hero-inner      { flex-direction: column; padding: 30px 16px; }
+    .hero-title      { font-size: 1.8rem; }
+    .hero-map-area   { width: 180px; }
+    .stats-grid      { grid-template-columns: repeat(2, 1fr); }
+    .stat-card       { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
 
     .mobile-menu-toggle { display: block; margin: 8px 0; }
-    .nav-list { display: none; flex-direction: column; width: 100%; }
-    .nav-list.open { display: flex; }
+    .nav-list        { display: none; flex-direction: column; width: 100%; }
+    .nav-list.open   { display: flex; }
     .nav-list > li > a { padding: 10px 16px; font-size: 0.9rem; }
-    .dropdown { position: static; box-shadow: none; border-top: none; background: rgba(255,255,255,0.05); }
-    .dropdown li a { color: rgba(255,255,255,0.8); padding: 8px 32px; }
+    .dropdown        { position: static; box-shadow: none; border-top: none; background: rgba(255,255,255,0.05); }
+    .dropdown li a   { color: rgba(255,255,255,0.8); padding: 8px 32px; }
 
-    .footer-grid { grid-template-columns: 1fr; gap: 20px; }
-    .footer-bottom-inner { flex-direction: column; text-align: center; }
+    .footer-grid          { grid-template-columns: 1fr; gap: 20px; }
+    .footer-bottom-inner  { flex-direction: column; text-align: center; }
     .breadcrumb-bar .container { flex-direction: column; align-items: flex-start; gap: 2px; }
 }
 
 @media (max-width: 480px) {
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero-title { font-size: 1.5rem; }
-    .header-right { display: none; }
+    .stats-grid    { grid-template-columns: repeat(2, 1fr); }
+    .hero-title    { font-size: 1.5rem; }
+    .header-right  { display: none; }
     .two-col-layout { gap: 16px; }
 }
 
