@@ -2,7 +2,6 @@
 /* ============================================================
    राजस्थान जनगणना - Main Stylesheet
    Census of India — Government of Rajasthan
-   Inspired by censusindia.gov.in & rajasthan.gov.in design language
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap');
@@ -11,7 +10,7 @@
 :root {
     /* Primary Government Theme — Census of India */
     --gov-blue:        #124b9b;   /* Deep official government blue */
-    --gov-blue-dark:   #144196;   /* Darker navy for headings & accents */
+    --gov-blue-dark:   #29519b;   /* Darker navy for headings & accents */
     --gov-blue-mid:    #082244;   /* Mid blue for nav/panels */
     --gov-orange:      #FF6600;   /* Saffron-orange (Indian tricolor) */
     --gov-orange-lt:   #FFE8D6;   /* Light saffron tint */
@@ -138,84 +137,117 @@ img { max-width: 100%; }
 /* ============================================================
    MAIN HEADER — official emblem + title strip
 ============================================================ */
-.main-header {
-    background: linear-gradient(180deg, #FAFCFF 0%, #EEF3FB 100%);
-    padding: 14px 0;
-    border-bottom: 4px solid var(--gov-blue-dark);
-    position: relative;
-    overflow: hidden;
+.main-header{
+
+background:linear-gradient(
+180deg,
+#FAFCFF 0%,
+#EEF3FB 100%
+);
+
+padding:15px 0;
+
+border-bottom:4px solid #002060;
+
+position:relative;
 }
 
-/* Tricolor accent line under header */
-.main-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%);
+.main-header::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+bottom:0;
+
+height:4px;
+
+background:
+linear-gradient(
+90deg,
+#FF9933 33%,
+#fff 33%,
+#fff 66%,
+#138808 66%
+);
 }
 
-.main-header::before {
-    content: '';
-    position: absolute;
-    top: 0; right: -60px;
-    width: 400px; height: 100%;
-    background: radial-gradient(ellipse, rgba(0,32,128,0.05), transparent 70%);
-    pointer-events: none;
+.header-inner{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:25px;
 }
 
-.header-inner {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.header-emblem{
+
+flex-shrink:0;
 }
 
-/* Emblem */
 .emblem-img{
-    width:60px;
-    height:60px;
-    object-fit:contain;
-    border-radius:50%;
+
+width:65px;
+
+height:65px;
+
+object-fit:contain;
 }
 
-/* Title */
-.header-title { flex: 1; }
-.header-title-hi {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--gov-blue-dark);
-    line-height: 1.2;
-    letter-spacing: 0.3px;
-}
-.header-title-en {
-    font-size: 0.92rem;
-    color: var(--gov-blue);
-    margin-top: 2px;
-    font-weight: 600;
-}
-.header-subtitle {
-    font-size: 0.73rem;
-    color: var(--gov-blue-mid);
-    margin-top: 3px;
+.header-title{
+
+flex:1;
 }
 
-/* Right Logo Badge */
-.header-right { flex-shrink: 0; text-align: center; }
-.raj-logo-badge {
-    background: linear-gradient(135deg, #002060, #003580);
-    border-radius: var(--radius);
-    padding: 10px 16px;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,32,96,0.25);
-    border: 2px solid var(--gov-saffron);
-}
-.raj-text-big  { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1; letter-spacing: 2px; }
-.raj-text-sm   { font-size: 0.55rem; color: var(--gov-saffron); letter-spacing: 2px; }
-.raj-logo-title{ font-size: 0.68rem; color: #aec6f0; margin-top: 4px; }
+.header-title-hi{
 
+font-size:32px;
+
+font-weight:700;
+
+color:#002060;
+
+line-height:1.2;
+}
+
+.header-title-en{
+
+font-size:16px;
+
+color:#0b4ea2;
+
+font-weight:600;
+
+margin-top:4px;
+}
+
+.header-subtitle{
+
+font-size:12px;
+
+color:#555;
+
+margin-top:6px;
+}
+
+.header-logo{
+
+flex-shrink:0;
+}
+
+.census-logo{
+
+width:85px;
+
+height:85px;
+
+object-fit:contain;
+}
 /* ============================================================
    MAIN NAVIGATION — deep blue official nav
 ============================================================ */
@@ -360,81 +392,151 @@ img { max-width: 100%; }
 /* ============================================================
    HERO SECTION
 ============================================================ */
-.hero-section {
-    background: linear-gradient(135deg, #002060 0%, #003580 50%, #001a4d 100%);
-    position: relative;
-    overflow: hidden;
-    min-height: 340px;
+/* ===== Census-style Hero ===== */
+
+.hero-section{
+    position:relative;
+    width:100%;
+    height: 450px;
+    overflow:hidden;
+    border-radius:0 0 18px 18px;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
 }
 
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 20% 50%, rgba(255,153,51,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(19,136,8,0.04) 0%, transparent 50%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(255,255,255,0.02)'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
+.heroSwiper{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 }
 
-/* Vertical tricolor left-edge accent */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 6px; height: 100%;
-    background: linear-gradient(180deg, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%);
-    z-index: 2;
+.swiper-wrapper,
+.swiper-slide{
+    height:100%;
 }
 
-.hero-inner {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 50px 16px 50px 26px;
-    position: relative;
-    z-index: 1;
+.swiper-slide img,
+.swiper-slide video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+    filter:brightness(.55);
 }
 
-.hero-content { flex: 1; }
-.hero-badge {
-    display: inline-block;
-    background: rgba(255,153,51,0.15);
-    border: 1px solid rgba(255,153,51,0.5);
-    color: var(--gov-saffron);
-    padding: 4px 14px;
-    border-radius: 4px;
-    font-size: 0.78rem;
-    letter-spacing: 1px;
-    margin-bottom: 14px;
-    font-weight: 600;
-}
-.hero-title {
-    font-family: var(--font-display);
-    font-size: 2.4rem;
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 12px;
-}
-.hero-title span { color: var(--gov-saffron); }
-.hero-sub    { color: rgba(255,255,255,0.90); font-size: 1rem; margin-bottom: 4px; }
-.hero-sub-en { color: rgba(255,255,255,0.60); font-size: 0.85rem; margin-bottom: 24px; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+/* content layer */
 
-.hero-map-area {
-    flex-shrink: 0;
-    width: 240px;
-}
-.raj-map-svg {
-    width: 100%;
-    filter: drop-shadow(0 4px 20px rgba(255,153,51,0.30));
-    animation: mapFloat 4s ease-in-out infinite;
-}
-@keyframes mapFloat {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-8px); }
+.hero-inner{
+    position:absolute;
+    inset:0;
+    z-index:10;
+
+    display:flex;
+    align-items:center;
+
+    padding-left:60px;
 }
 
+.hero-content{
+    max-width:600px;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(4px);
+
+    padding:22px 28px;
+
+    border-left:5px solid #ff9933;
+
+    border-radius:12px;
+
+    color:white;
+}
+
+.hero-badge{
+    display:inline-block;
+
+    background:#ff9933;
+
+    color:#222;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+}
+
+.hero-title{
+    font-size:38px;
+    font-weight:700;
+    line-height:1.2;
+    margin:0;
+}
+
+.hero-title span{
+    color:#ffcc66;
+}
+
+.hero-sub{
+    margin-top:12px;
+    font-size:16px;
+}
+
+.hero-sub-en{
+    margin-top:6px;
+    opacity:.9;
+    font-size:14px;
+}
+
+.hero-actions{
+    margin-top:18px;
+    display:flex;
+    gap:12px;
+}
+
+/* arrows */
+
+.heroSwiper .swiper-button-next,
+.heroSwiper .swiper-button-prev{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.45);
+
+    color:white;
+}
+
+.heroSwiper .swiper-button-next:after,
+.heroSwiper .swiper-button-prev:after{
+    font-size:16px;
+}
+
+.heroSwiper .swiper-button-next{
+    right:20px;
+}
+
+.heroSwiper .swiper-button-prev{
+    left:20px;
+}
+
+/* dots */
+
+.swiper-pagination-bullet{
+    background:white !important;
+}
+
+.swiper-pagination{
+    bottom:14px !important;
+}
 /* ============================================================
    BUTTONS
 ============================================================ */
@@ -802,6 +904,59 @@ img { max-width: 100%; }
     .hero-title    { font-size: 1.5rem; }
     .header-right  { display: none; }
     .two-col-layout { gap: 16px; }
+}
+
+/* FOOTER FINAL OVERRIDE */
+
+.footer-logo-strip{
+
+display:flex !important;
+
+justify-content:center !important;
+
+align-items:center !important;
+
+flex-wrap:wrap !important;
+
+gap:25px !important;
+
+padding:25px !important;
+
+background:#2f2f2f !important;
+}
+
+.footer-logo-strip a{
+
+display:block !important;
+}
+
+.footer-logo-strip img{
+
+width:150px !important;
+
+height:60px !important;
+
+background:white !important;
+
+padding:6px !important;
+
+border-radius:4px !important;
+
+object-fit:contain !important;
+
+transition:.3s !important;
+}
+
+.footer-logo-strip img:hover{
+
+transform:scale(1.05) !important;
+}
+
+.main-footer{
+
+background:#333 !important;
+
+color:white !important;
 }
 
 /* ============================================================

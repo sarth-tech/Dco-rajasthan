@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/components.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=9999999">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/components.css?v=20">
 </head>
 <body>
 
@@ -43,42 +43,64 @@
 
 <!-- ============ MAIN HEADER ============ -->
 <header class="main-header">
-    <div class="container header-inner">
 
-        <!-- Emblem -->
-        <div class="header-emblem">
-            <div class="emblem-circle">
+<div class="container">
 
-               
-                <img src="/media/satyamev jayate.jpg" alt="Government Emblem" class="emblem-img">
+<div class="header-inner">
 
-                <div class="emblem-text-circle">
-                    सत्यमेव जयते
-                </div>
+<!-- Left emblem -->
 
-            </div>
-        </div>
-        
-        <!-- Title Block -->
-        <div class="header-title">
-            <div class="header-title-hi">जनगणना निदेशालय, राजस्थान</div>
-            <div class="header-title-en">Directorate of Census Operations, Rajasthan</div>
-            <div class="header-subtitle">रजिस्ट्रार जनरल एवं जनगणना आयुक्त, भारत के कार्यालय के अंतर्गत</div>
-        </div>
-        
-        <!-- Right Logo Area -->
-        <div class="header-right">
-            <div class="raj-logo">
-                <div class="raj-logo-badge">
-                    <span class="raj-text-big">RJ</span>
-                    <span class="raj-text-sm">RAJASTHAN</span>
-                </div>
-                <div class="raj-logo-title">भारत सरकार</div>
-            </div>
-        </div>
-    </div>
+<div class="header-emblem">
+
+<img
+src="${pageContext.request.contextPath}/media/files/emblem.png"
+class="emblem-img"
+alt="Emblem">
+
+</div>
+
+
+<!-- Center title -->
+
+<div class="header-title">
+
+<div class="header-title-hi">
+
+जनगणना निदेशालय, राजस्थान
+
+</div>
+
+<div class="header-title-en">
+
+Directorate of Census Operations, Rajasthan
+
+</div>
+
+<div class="header-subtitle">
+
+Under Office of Registrar General & Census Commissioner, India
+
+</div>
+
+</div>
+
+
+<!-- Right logo -->
+
+<div class="header-logo">
+
+<img
+src="${pageContext.request.contextPath}/media/files/censuslogo_2027.png"
+class="census-logo"
+alt="Census">
+
+</div>
+
+</div>
+
+</div>
+
 </header>
-
 <!-- ============ MAIN NAVIGATION ============ -->
 <nav class="main-nav" role="navigation" aria-label="मुख्य नेविगेशन">
     <div class="container">

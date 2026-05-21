@@ -1,7 +1,13 @@
 package com.census.rajasthan.controller;
 
+
+
+import com.census.rajasthan.repository.MediaRepository;
 import com.census.rajasthan.service.CensusService;
 import com.census.rajasthan.service.NoticeService;
+
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,22 +23,36 @@ public class HomeController {
 
     private final CensusService censusService;
     private final NoticeService noticeService;
+    private final MediaRepository mediaRepository;
 
-    public HomeController(CensusService censusService, NoticeService noticeService) {
+    public HomeController(CensusService censusService, NoticeService noticeService, MediaRepository mediaRepository) {
         this.censusService = censusService;
         this.noticeService = noticeService;
+        this.mediaRepository = mediaRepository;
     }
 
     /** GET / — Home page */
-    @GetMapping({"", "/"})
-    public String home(Model model) {
-        model.addAttribute("pageTitle", "मुख्य पृष्ठ — जनगणना राजस्थान");
-        model.addAttribute("activePage", "home");
-        model.addAttribute("summary",    censusService.getStateSummary());
-        model.addAttribute("notices",    noticeService.getLatestNotices(5));
-        return "index";
-    }
+   @GetMapping({"", "/"})
+public String home(Model model) {
 
+    model.addAttribute("pageTitle",
+            "मुख्य पृष्ठ — जनगणना राजस्थान");
+
+    model.addAttribute("activePage","home");
+
+    model.addAttribute("summary",
+            censusService.getStateSummary());
+
+    model.addAttribute("notices",
+            noticeService.getLatestNotices(5));
+
+    model.addAttribute(
+            "mediaList",
+            mediaRepository.findAllByOrderByUploadDateDesc()
+    );
+
+    return "index";
+}
     /** GET /districts — District data table */
     @GetMapping("/districts")
     public String districts(Model model) {

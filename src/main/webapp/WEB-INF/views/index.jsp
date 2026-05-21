@@ -13,50 +13,49 @@
     </div>
 </div>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
 <!-- ============ HERO BANNER ============ -->
 <section class="hero-section">
-    <div class="hero-bg"></div>
-    <div class="container hero-inner">
-        <div class="hero-content">
-            <div class="hero-badge">जनगणना 2027 • Census 2027</div>
-            <h1 class="hero-title">जनगणना निदेशालय<br><span>राजस्थान</span></h1>
-            <p class="hero-sub">भारत की 16वीं जनगणना में भागीदार बनें</p>
-            <p class="hero-sub-en">Be a part of India's 16th Census</p>
-            <div class="hero-actions">
-                <a href="/districts" class="btn btn-primary">📊 जिला डेटा देखें</a>
-                <a href="/notices" class="btn btn-outline">📋 नवीनतम सूचनाएँ</a>
-            </div>
-        </div>
-        <div class="hero-map-area">
-            <!-- Rajasthan stylized map SVG -->
-            <svg class="raj-map-svg" viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="mapGrad" cx="50%" cy="50%" r="60%">
-                        <stop offset="0%" stop-color="rgba(255,165,0,0.3)"/>
-                        <stop offset="100%" stop-color="rgba(255,100,0,0.05)"/>
-                    </radialGradient>
-                </defs>
-                <!-- Simplified Rajasthan map shape -->
-                <path d="M 60 30 L 200 20 L 260 60 L 280 130 L 240 200 L 210 280 L 140 310 L 80 290 L 30 230 L 20 150 L 40 80 Z"
-                      fill="url(#mapGrad)" stroke="rgba(255,150,0,0.6)" stroke-width="2"/>
-                <!-- District dots -->
-                <circle cx="160" cy="100" r="6" fill="#FF6B35" opacity="0.8"/>
-                <text x="168" y="104" fill="white" font-size="9" font-family="Noto Sans Devanagari">जयपुर</text>
-                <circle cx="100" cy="160" r="4" fill="#FF6B35" opacity="0.7"/>
-                <text x="108" y="164" fill="white" font-size="8">जोधपुर</text>
-                <circle cx="190" cy="200" r="4" fill="#FF6B35" opacity="0.7"/>
-                <text x="198" y="204" fill="white" font-size="8">उदयपुर</text>
-                <circle cx="200" cy="130" r="4" fill="#FF6B35" opacity="0.7"/>
-                <text x="208" y="134" fill="white" font-size="8">अलवर</text>
-                <circle cx="130" cy="230" r="4" fill="#FF6B35" opacity="0.7"/>
-                <text x="138" y="234" fill="white" font-size="8">कोटा</text>
-                <!-- State Label -->
-                <text x="150" y="175" fill="rgba(255,200,100,0.8)" font-size="14" font-family="Noto Sans Devanagari" text-anchor="middle" font-weight="bold">राजस्थान</text>
-            </svg>
-        </div>
-    </div>
-</section>
 
+<div class="swiper heroSwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+
+<video autoplay muted loop playsinline
+style="width:100%;height:100%;object-fit:cover;">
+
+<source
+src="/media/files/census_video_hindi.mp4"
+type="video/mp4">
+
+</video>
+
+</div>
+
+<!-- Add more slides later -->
+
+<div class="swiper-slide">
+
+<img
+src="/media/files/censusbanner1.jpg"
+style="width:100%;height:100%;object-fit:cover;">
+
+</div>
+
+</div>
+
+<div class="swiper-pagination"></div>
+
+<div class="swiper-button-prev"></div>
+
+<div class="swiper-button-next"></div>
+
+</div>
+
+</section>
 <!-- ============ KEY STATISTICS ============ -->
 <section class="stats-section">
     <div class="container">
@@ -78,7 +77,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-icon">🏘️</div>
-                <div class="stat-number" data-target="33">0</div>
+                <div class="stat-number" data-target="41">0</div>
                 <div class="stat-label">जिले<br><small>Districts</small></div>
             </div>
             <div class="stat-card">
@@ -237,3 +236,5 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(c => observer.observe(c));
 });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script>new Swiper(".heroSwiper",{loop:true,speed:1000,autoplay:{delay:4000,disableOnInteraction:false},pagination:{el:".swiper-pagination",clickable:true}});</script>

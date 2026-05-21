@@ -15,6 +15,9 @@ public interface MediaRepository extends JpaRepository<MediaFile, Long> {
 
     List<MediaFile> findAllByOrderByUploadDateDesc();
 
+    List<MediaFile> findByFileNameContaining(String keyword);
+    List<MediaFile> findByCategory(String category);
+
     @Query("SELECT m FROM MediaFile m WHERE m.fileType = :fileType ORDER BY m.uploadDate DESC")
     List<MediaFile> findImagesByType(@Param("fileType") String fileType);
 

@@ -35,6 +35,9 @@ public class WebConfig implements WebMvcConfigurer {
 
         registry.addResourceHandler("/images/**")
                 .addResourceLocations("/WEB-INF/images/");
+        
+        registry.addResourceHandler("/media/**")
+                .addResourceLocations("file:///D:/rajasthan-census/uploads/media/");        
 
         // Map favicon and other root-level static files
         registry.addResourceHandler("/favicon.ico", "/robots.txt")

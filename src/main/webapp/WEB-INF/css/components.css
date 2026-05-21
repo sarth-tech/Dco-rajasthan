@@ -200,41 +200,37 @@
 /* ============================================================
    ABOUT PAGE
 ============================================================ */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 24px;
-    align-items: start;
+.about-layout{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:25px;
 }
-.about-text p    { margin-bottom: 14px; font-size: 0.93rem; line-height: 1.85; }
-.about-text h3   {
-    margin: 20px 0 10px;
-    color: var(--gov-blue-dark);
-    font-family: var(--font-display);
-    padding-left: 12px;
-    border-left: 3px solid var(--gov-saffron);
-}
-.about-list      { list-style: none; }
-.about-list li {
-    padding: 8px 0 8px 22px;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.9rem;
-}
-.about-list li::before  { content: '▸'; position: absolute; left: 0; color: var(--gov-orange); }
-.director-avatar {
-    font-size: 3rem;
-    width: 80px; height: 80px;
-    background: var(--bg-light);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 12px;
-    border: 3px solid var(--gov-blue);
-}
-.text-center { text-align: center; }
-.about-sidebar .panel-body h4 { margin-bottom: 6px; color: var(--gov-blue-dark); }
-.about-sidebar .panel-body p  { font-size: 0.83rem; color: var(--text-light); }
 
+.about-text p{
+line-height:1.8;
+margin-bottom:16px;
+}
+
+.about-list{
+padding-left:20px;
+}
+
+.about-list li{
+margin-bottom:10px;
+}
+
+.director-avatar{
+font-size:60px;
+margin-bottom:15px;
+}
+
+@media(max-width:768px){
+
+.about-layout{
+grid-template-columns:1fr;
+}
+
+}
 /* ============================================================
    CONTACT PAGE
 ============================================================ */

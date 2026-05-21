@@ -2,57 +2,183 @@
 <%@ include file="header.jsp" %>
 
 <section class="content-section">
-    <div class="container">
-        <div class="page-heading">
-            <h1>हमारे बारे में</h1>
-            <p class="page-subtitle">जनगणना निदेशालय, राजस्थान के बारे में जानकारी</p>
-        </div>
 
-        <div class="about-grid">
-            <div class="about-main">
-                <div class="panel">
-                    <div class="panel-header"><h2>📌 परिचय</h2></div>
-                    <div class="panel-body about-text">
-                        <p>जनगणना निदेशालय, राजस्थान, रजिस्ट्रार जनरल एवं जनगणना आयुक्त, भारत के कार्यालय के अंतर्गत एक
-                        महत्वपूर्ण संस्था है। यह कार्यालय राजस्थान राज्य में जनगणना अभियानों के आयोजन, समन्वय और
-                        क्रियान्वयन के लिए उत्तरदायी है।</p>
+<div class="container">
 
-                        <p>जनगणना एक दशकीय क्रिया है जिसमें देश की संपूर्ण जनसंख्या की गणना एवं उनके सामाजिक-आर्थिक
-                        विशेषताओं का संग्रह किया जाता है। जनगणना अधिनियम, 1948 के अंतर्गत यह कार्य संपादित किया जाता है।</p>
+<div class="page-heading">
 
-                        <h3>मुख्य कार्य</h3>
-                        <ul class="about-list">
-                            <li>राज्य में जनगणना अभियान का आयोजन एवं प्रबंधन</li>
-                            <li>जिला एवं तहसील स्तर पर प्रशिक्षण कार्यक्रम</li>
-                            <li>जनगणना डेटा का संकलन एवं प्रकाशन</li>
-                            <li>राष्ट्रीय जनसंख्या रजिस्टर (NPR) का अद्यतन</li>
-                            <li>सांख्यिकीय प्रकाशन एवं रिपोर्ट तैयार करना</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <aside class="about-sidebar">
-                <div class="panel">
-                    <div class="panel-header"><h3>👤 निदेशक</h3></div>
-                    <div class="panel-body text-center">
-                        <div class="director-avatar">🏛️</div>
-                        <h4>श्री [निदेशक का नाम]</h4>
-                        <p>जनगणना निदेशक, राजस्थान</p>
-                        <p><small>Director of Census Operations, Rajasthan</small></p>
-                    </div>
-                </div>
-                <div class="panel">
-                    <div class="panel-header"><h3>📍 पता</h3></div>
-                    <div class="panel-body">
-                        <p>जनगणना भवन,<br>
-                        सिविल लाइंस,<br>
-                        जयपुर - 302 006<br>
-                        राजस्थान, भारत</p>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </div>
+<h1>हमारे बारे में</h1>
+
+<p class="page-subtitle">
+जनगणना कार्य निदेशालय, राजस्थान
+</p>
+
+</div>
+
+<div class="about-layout">
+
+<div class="about-main">
+
+<div class="panel">
+
+<div class="panel-header">
+<h2>📌 परिचय</h2>
+</div>
+
+<div class="panel-body about-text">
+
+<p>
+भारतीय जनगणना सूचनाओं का सबसे बड़ा एवं विश्वसनीय स्रोत है।
+1872 से लगातार दशकीय जनगणना के आयोजन का 125 वर्षों से अधिक
+का इतिहास रहा है।
+</p>
+
+<p>
+जनगणना संगठन भारत सरकार के गृह मंत्रालय के अधीन कार्य करता है।
+यह भारत के महारजिस्ट्रार एवं जनगणना आयुक्त के मार्गदर्शन में
+कार्य करता है। राजस्थान राज्य में जनगणना कार्यों का संचालन
+जनगणना कार्य निदेशालय, राजस्थान द्वारा किया जाता है।
+</p>
+
+<p>
+राजस्थान जनगणना निदेशालय स्थित:
+<br><br>
+
+<strong>
+जनगणना भवन<br>
+6-B, झालाना डूंगरी<br>
+जयपुर – 302004
+</strong>
+</p>
+
+<h3>मुख्य कार्य</h3>
+
+<ul class="about-list">
+
+<li>राज्य में जनगणना अभियान का आयोजन</li>
+
+<li>जनसंख्या डेटा का संग्रह एवं विश्लेषण</li>
+
+<li>राष्ट्रीय जनसंख्या रजिस्टर (NPR)</li>
+
+<li>जिला स्तरीय प्रशिक्षण कार्यक्रम</li>
+
+<li>जनसांख्यिकीय एवं सांख्यिकीय रिपोर्ट</li>
+
+<li>डिजिटल जनगणना संचालन</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-header">
+<h2>📊 जनगणना का महत्व</h2>
+</div>
+
+<div class="panel-body">
+
+<p>
+जनगणना सामाजिक, आर्थिक एवं जनसांख्यिकीय परिवर्तनों का दर्पण है।
+यह योजनाकारों, शोधकर्ताओं, प्रशासकों तथा नीति निर्माताओं को
+विश्वसनीय आंकड़े उपलब्ध कराती है।
+</p>
+
+<p>
+भारत की जनगणना विश्व का सबसे बड़ा प्रशासनिक अभ्यास माना जाता है।
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<aside class="about-sidebar">
+
+<div class="panel">
+
+<div class="panel-header">
+<h3>🏛️ निदेशक</h3>
+</div>
+
+<div class="panel-body text-center">
+
+<div class="director-avatar">
+
+👤
+
+</div>
+
+<h4>
+श्री बिष्णु चरण मल्लिक
+</h4>
+
+<p>
+निदेशक, जनगणना कार्य राजस्थान
+</p>
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-header">
+<h3>📍 कार्यालय</h3>
+</div>
+
+<div class="panel-body">
+
+<p>
+
+जनगणना भवन<br>
+
+6-B, झालाना डूंगरी<br>
+
+जयपुर - 302004<br>
+
+राजस्थान
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-header">
+<h3>📞 संपर्क</h3>
+</div>
+
+<div class="panel-body">
+
+<p>
+
+फोन: 0141-2708078<br>
+
+ईमेल:
+director-rj.census@nic.in
+
+</p>
+
+</div>
+
+</div>
+
+</aside>
+
+</div>
+
+</div>
+
 </section>
 
 <%@ include file="footer.jsp" %>
